@@ -1,128 +1,394 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>许嵩</title>
-    <style>
-      img {
-        max-width: 100%;
-      }
-    </style>
+    <title></title>
   </head>
-  <body>
-    <nav>
-      <ol>
-        <li><a href="#xusong">个人简介</a></li>
-        <li><a href="#events">重要事件</a></li>
-        <li><a href="#awards">成就和荣</a>誉</li>
-        <li><a href="#works">主要作品</a></li>
-        <li><a href="#picture">生活照</a></li>
-        <li><a href="#life">生平</a></li>
-      </ol>
-    </nav>
-    <h1 id="xusong">许嵩</h1>
-    <p>
-      1986年5月14日－），中国大陆男歌手、词曲作者、音乐制作人。1986年出生于安徽省合肥市。2004年考入安徽医科大学，大学期间自修作曲及音乐制作，通过当时自己的博客发表音乐作品。2009年独立出版首张词曲全创作专辑《自定义》，包揽了全部曲目的词曲创作及制作以及发行；
-    </p>
-    <h2 id="events">重要事件</h2>
-    <ul>
-      <li>2010年出版第二张词曲全创作专辑《寻雾启示》；</li>
-      <li>2011年加盟海蝶音乐，推出第三张词曲全创作专辑《苏格拉没有底》；</li>
-      <li>2012年7月发表第四张全创作专辑《梦游计》；</li>
-      <li>2013年8月出版个人摄影随笔集《海上灵光》；</li>
-      <li>2014年8月推出第五张全创作专辑《不如吃茶去》。</li>
-      <li>2016年4月发行第六张全创作专辑《青年晚报》。</li>
-      <li>2018年7月12日发行第七张创作专辑《寻宝游戏》。</li>
-    </ul>
-    <h2 id="awards">成就和荣誉</h2>
-    <ol>
-      <li>2011年11月24日 第4届音乐风云榜新人盛典最受欢迎唱作新人</li>
-      <li>2012年1月12日 第6届腾讯星光大典内地年度男歌手</li>
-      <li>2012年1月12日 第6届腾讯星光大典内地年度男歌手</li>
-      <li>2012年4月7日 第19届东方风云榜年度最佳唱作人</li>
-      <li>2012年4月7日 第19届东方风云榜年度金曲《想象之中》</li>
-      <li>
-        2012年4月23日 第10届MusicRadio中国TOP排行榜年度推荐唱片《苏格拉没有底》
-      </li>
-      <li>2012年5月16日 第9届亚太音乐榜最受欢迎唱作新锐大奖</li>
-      <li>2012年5月16日 第9届亚太音乐榜数位专辑销量榜冠军《苏格拉没有底》</li>
-      <li>2015年4月13日 第15届音乐风云榜年度媒体关注内地歌手</li>
-      <li>2015年12月6日 第9届中国移动咪咕汇十大畅销金曲《山水之间》</li>
-    </ol>
-    <h2 id="works">主要作品</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>年份</th>
-          <th>专辑名</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2009年1月10日</td>
-          <td>自定义</td>
-        </tr>
-        <tr>
-          <td>2010年1月6日</td>
-          <td>寻雾启示</td>
-        </tr>
-        <tr>
-          <td>2011年4月1日</td>
-          <td>苏格拉没有底</td>
-        </tr>
-        <tr>
-          <td>2012年7月11日</td>
-          <td>梦游计</td>
-        </tr>
-        <tr>
-          <td>2014年8月26日</td>
-          <td>不如吃茶去</td>
-        </tr>
-        <tr>
-          <td>2016年6月28日</td>
-          <td>青年晚报</td>
-        </tr>
-        <tr>
-          <td>2018年7月12日</td>
-          <td>寻宝游戏</td>
-        </tr>
-        <tr>
-          <td>2021年5月14日</td>
-          <td>呼吸之野</td>
-        </tr>
-      </tbody>
-    </table>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #000;
+    }
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .aa {
+      position: fixed;
+      left: 50%;
+      bottom: 10px;
+    }
+    #div1 {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+    }
+    #div1:before {
+      content: "";
+      display: block;
 
-    <h2 id="picture">生活照</h2>
-    <div>
-      <a href="/image/1.jpg" target="_blank"
-        ><img width="800" src="/image/1.jpg"
-      /></a>
+      border-radius: 50%;
+    }
+    #div1:after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+    }
+    #html {
+      word-break: break;
+      color: white;
+      font-size: 2em;
+    }
+    @media (max-width: 500px) {
+      #html {
+        height: 50vh;
+        overflow: auto;
+        word-break: break-all;
+      }
+      #wrapper {
+        height: 50vh;
+        position: relative;
+      }
+      #div1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  </style>
+  <body>
+    <canvas id="pinkboard"></canvas>
+    <div id="html"></div>
+    <style id="style"></style>
+    <div id="wrapper">
+      <div id="div1"></div>
     </div>
-    <div>
-      <a href="/image/2.jpg" target="_blank"
-        ><img width="800" src="/image/2.jpg"
-      /></a>
-    </div>
-    <div>
-      <a href="/image/3.jpg" target="_blank"
-        ><img width="800" src="/image/3.jpg"
-      /></a>
-    </div>
-    <div>
-      <a href="/image/4.jpg" target="_blank"
-        ><img width="800" src="/image/4.jpg"
-      /></a>
-    </div>
-    <h2>生平</h2>
-    <p id="life">
-      2006年，许嵩大二，就读安徽医科大学管理系。此时他开始以“Vae”笔名上传音乐作品到其个人网站，引起网友关注。
-      2007到2008年，他保持每月发表一首作品。期间人气不断上升，开始接到演出邀请，但他以学业为由拒绝，2008年获得“安徽省十佳青年学生”的荣誉。2008年的夏天，许嵩从安徽医科大学毕业。
-      2009年1月10日，许嵩发行第一张独立创作专辑《自定义》，得到圈内人较高的评论，但由于缺乏唱片公司的宣传，销量不高。此后许多唱片公司找他谈签约，但因为许嵩要求由自己独立制作第二张专辑作罢。
-      2010年1月6日，发行第二张的专辑《寻雾启示》。专辑依旧由他自己包揽词曲创作。专辑发行后广受好评，搜狐、联想、华谊音乐开始邀请其为旗下主打产品/艺人量身打造作品。
-      2011年4月，许嵩与海蝶音乐签约。签约后推出第三张创作专辑《苏格拉没有底》，获得了超过二十三万张的销量。
-    </p>
+    <script>
+      let html = document.querySelector("#html");
+      let style = document.querySelector("#style");
+      let string = ` 
+      hello，小雪，最近还好吗，有开心嘛？
+      我希望你一直开心哇！
+      
+
+`;
+      let string2 = ``; //初始化string2
+      //string = string.replace(/\n/g,"<br>")  正则换行
+      console.log(string.length);
+      let n = 0;
+      html.innerHTML = string.substring(0, n);
+      let step = () => {
+        setTimeout(() => {
+          //string2加空格
+          //string照搬string里面的内容
+          if (string[n] === "\n") {
+            string2 += "<br>";
+          } else if (string[n] === " ") {
+            string2 += "&nbsp";
+          } else {
+            string2 += string[n];
+          }
+          html.innerHTML = string2;
+          style.innerHTML = string.substring(0, n);
+          window.scrollTo(0, 999999);
+          html.scrollTo(0, 999999);
+          console.log(n);
+          if (n < string.length - 1) {
+            n = n + 1;
+            step();
+          }
+        }, 50);
+      };
+      step();
+    </script>
+    <script>
+      /*
+       * Settings
+       */
+      var settings = {
+        particles: {
+          length: 500, // maximum amount of particles
+          duration: 2, // particle duration in sec
+          velocity: 100, // particle velocity in pixels/sec
+          effect: -0.75, // play with this for a nice effect
+          size: 30, // particle size in pixels
+        },
+      };
+
+      /*
+       * RequestAnimationFrame polyfill by Erik M?ller
+       */
+      (function () {
+        var b = 0;
+        var c = ["ms", "moz", "webkit", "o"];
+        for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
+          window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
+          window.cancelAnimationFrame =
+            window[c[a] + "CancelAnimationFrame"] ||
+            window[c[a] + "CancelRequestAnimationFrame"];
+        }
+        if (!window.requestAnimationFrame) {
+          window.requestAnimationFrame = function (h, e) {
+            var d = new Date().getTime();
+            var f = Math.max(0, 16 - (d - b));
+            var g = window.setTimeout(function () {
+              h(d + f);
+            }, f);
+            b = d + f;
+            return g;
+          };
+        }
+        if (!window.cancelAnimationFrame) {
+          window.cancelAnimationFrame = function (d) {
+            clearTimeout(d);
+          };
+        }
+      })();
+
+      /*
+       * Point class
+       */
+      var Point = (function () {
+        function Point(x, y) {
+          this.x = typeof x !== "undefined" ? x : 0;
+          this.y = typeof y !== "undefined" ? y : 0;
+        }
+        Point.prototype.clone = function () {
+          return new Point(this.x, this.y);
+        };
+        Point.prototype.length = function (length) {
+          if (typeof length == "undefined")
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+          this.normalize();
+          this.x *= length;
+          this.y *= length;
+          return this;
+        };
+        Point.prototype.normalize = function () {
+          var length = this.length();
+          this.x /= length;
+          this.y /= length;
+          return this;
+        };
+        return Point;
+      })();
+
+      /*
+       * Particle class
+       */
+      var Particle = (function () {
+        function Particle() {
+          this.position = new Point();
+          this.velocity = new Point();
+          this.acceleration = new Point();
+          this.age = 0;
+        }
+        Particle.prototype.initialize = function (x, y, dx, dy) {
+          this.position.x = x;
+          this.position.y = y;
+          this.velocity.x = dx;
+          this.velocity.y = dy;
+          this.acceleration.x = dx * settings.particles.effect;
+          this.acceleration.y = dy * settings.particles.effect;
+          this.age = 0;
+        };
+        Particle.prototype.update = function (deltaTime) {
+          this.position.x += this.velocity.x * deltaTime;
+          this.position.y += this.velocity.y * deltaTime;
+          this.velocity.x += this.acceleration.x * deltaTime;
+          this.velocity.y += this.acceleration.y * deltaTime;
+          this.age += deltaTime;
+        };
+        Particle.prototype.draw = function (context, image) {
+          function ease(t) {
+            return --t * t * t + 1;
+          }
+          var size = image.width * ease(this.age / settings.particles.duration);
+          context.globalAlpha = 1 - this.age / settings.particles.duration;
+          context.drawImage(
+            image,
+            this.position.x - size / 2,
+            this.position.y - size / 2,
+            size,
+            size
+          );
+        };
+        return Particle;
+      })();
+
+      /*
+       * ParticlePool class
+       */
+      var ParticlePool = (function () {
+        var particles,
+          firstActive = 0,
+          firstFree = 0,
+          duration = settings.particles.duration;
+
+        function ParticlePool(length) {
+          // create and populate particle pool
+          particles = new Array(length);
+          for (var i = 0; i < particles.length; i++)
+            particles[i] = new Particle();
+        }
+        ParticlePool.prototype.add = function (x, y, dx, dy) {
+          particles[firstFree].initialize(x, y, dx, dy);
+
+          // handle circular queue
+          firstFree++;
+          if (firstFree == particles.length) firstFree = 0;
+          if (firstActive == firstFree) firstActive++;
+          if (firstActive == particles.length) firstActive = 0;
+        };
+        ParticlePool.prototype.update = function (deltaTime) {
+          var i;
+
+          // update active particles
+          if (firstActive < firstFree) {
+            for (i = firstActive; i < firstFree; i++)
+              particles[i].update(deltaTime);
+          }
+          if (firstFree < firstActive) {
+            for (i = firstActive; i < particles.length; i++)
+              particles[i].update(deltaTime);
+            for (i = 0; i < firstFree; i++) particles[i].update(deltaTime);
+          }
+
+          // remove inactive particles
+          while (
+            particles[firstActive].age >= duration &&
+            firstActive != firstFree
+          ) {
+            firstActive++;
+            if (firstActive == particles.length) firstActive = 0;
+          }
+        };
+        ParticlePool.prototype.draw = function (context, image) {
+          // draw active particles
+          if (firstActive < firstFree) {
+            for (i = firstActive; i < firstFree; i++)
+              particles[i].draw(context, image);
+          }
+          if (firstFree < firstActive) {
+            for (i = firstActive; i < particles.length; i++)
+              particles[i].draw(context, image);
+            for (i = 0; i < firstFree; i++) particles[i].draw(context, image);
+          }
+        };
+        return ParticlePool;
+      })();
+
+      /*
+       * Putting it all together
+       */
+      (function (canvas) {
+        var context = canvas.getContext("2d"),
+          particles = new ParticlePool(settings.particles.length),
+          particleRate =
+            settings.particles.length / settings.particles.duration, // particles/sec
+          time;
+
+        // get point on heart with -PI <= t <= PI
+        function pointOnHeart(t) {
+          return new Point(
+            160 * Math.pow(Math.sin(t), 3),
+            130 * Math.cos(t) -
+              50 * Math.cos(2 * t) -
+              20 * Math.cos(3 * t) -
+              10 * Math.cos(4 * t) +
+              25
+          );
+        }
+
+        // creating the particle image using a dummy canvas
+        var image = (function () {
+          var canvas = document.createElement("canvas"),
+            context = canvas.getContext("2d");
+          canvas.width = settings.particles.size;
+          canvas.height = settings.particles.size;
+          // helper function to create the path
+          function to(t) {
+            var point = pointOnHeart(t);
+            point.x =
+              settings.particles.size / 2 +
+              (point.x * settings.particles.size) / 350;
+            point.y =
+              settings.particles.size / 2 -
+              (point.y * settings.particles.size) / 350;
+            return point;
+          }
+          // create the path
+          context.beginPath();
+          var t = -Math.PI;
+          var point = to(t);
+          context.moveTo(point.x, point.y);
+          while (t < Math.PI) {
+            t += 0.01; // baby steps!
+            point = to(t);
+            context.lineTo(point.x, point.y);
+          }
+          context.closePath();
+          // create the fill
+          context.fillStyle = "#ea80b0";
+          context.fill();
+          // create the image
+          var image = new Image();
+          image.src = canvas.toDataURL();
+          return image;
+        })();
+
+        // render that thing!
+        function render() {
+          // next animation frame
+          requestAnimationFrame(render);
+
+          // update time
+          var newTime = new Date().getTime() / 1000,
+            deltaTime = newTime - (time || newTime);
+          time = newTime;
+
+          // clear canvas
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          // create new particles
+          var amount = particleRate * deltaTime;
+          for (var i = 0; i < amount; i++) {
+            var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+            var dir = pos.clone().length(settings.particles.velocity);
+            particles.add(
+              canvas.width / 2 + pos.x,
+              canvas.height / 2 - pos.y,
+              dir.x,
+              -dir.y
+            );
+          }
+
+          // update and draw particles
+          particles.update(deltaTime);
+          particles.draw(context, image);
+        }
+
+        // handle (re-)sizing of the canvas
+        function onResize() {
+          canvas.width = canvas.clientWidth;
+          canvas.height = canvas.clientHeight;
+        }
+        window.onresize = onResize;
+
+        // delay rendering bootstrap
+        setTimeout(function () {
+          onResize();
+          render();
+        }, 10);
+      })(document.getElementById("pinkboard"));
+    </script>
   </body>
 </html>
